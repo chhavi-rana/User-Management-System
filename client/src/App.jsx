@@ -1,5 +1,6 @@
 import Home from "./Home";
 import CreateUser from "./CreateUser";
+import UpdateUser from "./UpdateUser";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -8,9 +9,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/create" element={<CreateUser />}>
-          {" "}
-        </Route>
+        <Route path="/create" element={<CreateUser />}></Route>
+        <Route path="/update/:id" element={<UpdateUser />}></Route>
       </Routes>
     </BrowserRouter>
   );
