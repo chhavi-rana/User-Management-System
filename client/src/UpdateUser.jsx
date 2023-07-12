@@ -34,11 +34,11 @@ const UpdateUser = () => {
           </div>
           <div className='my-4'>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" className="form-control" value={zemail}/>
+            <input type="email" name="email" className="form-control" value={zemail} onChange={(e) => setEmail(e.target.value)}/>
           </div>
           <div className='my-4'>
           <label htmlFor="phoneNumber">Phone Number</label>
-          <input type="tel" name="phoneNumber" className="form-control" value={zphone}/> 
+          <input type="tel" name="phoneNumber" className="form-control" value={zphone} onChange={(e) => setPhone(e.target.value)}/> 
           </div>
           <br/>
           <button className="btn btn-info">Update</button>
