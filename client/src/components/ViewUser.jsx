@@ -3,7 +3,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 const ViewUser = () => {
   const { id } = useParams();
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.users.users);
   const currentUser = users.filter((user) => user.id == id);
 
   return (
@@ -13,7 +13,7 @@ const ViewUser = () => {
           <h5 className="card-title">User Details</h5>
           <table className="table table-striped">
             <thead>
-              <tr>
+              <tr> 
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>

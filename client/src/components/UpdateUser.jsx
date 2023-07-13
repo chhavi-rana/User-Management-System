@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { updateUser } from "../redux/userReducer";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { updateUser } from "../redux/userReducer";
+// import { useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";
 
 const UpdateUser = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
   const { id } = useParams();
   const users = useSelector((state) => state.users);
   const existingUser = users.filter((f) => f.id == id);
@@ -16,18 +16,18 @@ const UpdateUser = () => {
   const [zemail, setEmail] = useState(email);
   const [zphone, setPhone] = useState(phone);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(users.length);
-    dispatch(updateUser({ id: id, name: zname, email: zemail, phone: zphone }));
-    navigate("/");
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log(users.length);
+  //   dispatch(updateUser({ id: id, name: zname, email: zemail, phone: zphone }));
+  //   navigate("/");
+  // };
 
   return (
     <div className="d-flex w-100 vh-100 justify-content-center align-items-center">
       <div className="w-50 border bg-secondary text-white p-5">
         <h3>Update User</h3>
-        <form onSubmit={handleSubmit}>
+        <form /*onSubmit={handleSubmit}*/>
           <div className="my-4">
             <label htmlFor="name">Name</label>
             <input

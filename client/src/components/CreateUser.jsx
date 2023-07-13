@@ -7,13 +7,12 @@ const CreateUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.users.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(users.length);
     dispatch(
       addUser({ id: users[users.length - 1].id + 1, name, email, phone })
     );

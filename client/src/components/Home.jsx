@@ -1,20 +1,28 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { getUser } from "../redux/userReducer";
 import { deleteUser } from "../redux/userReducer";
 
 const Home = () => {
-  const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
+  useEffect(() =>{
+    dispatch(getUser())
+  }, [])
+  const users = useSelector((state) => state.users.users);
+  
   const handleDelete = (id) => {
-    dispatch(deleteUser({ id: id }));
+    dispatch(deleteUser(id));
   };
-  return (
+  return  (
+
     <div className="container">
       <div>
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid">
             <span className="navbar-text">User Management System</span>
+            <span className="">Total Users - {users.length}</span>
           </div>
         </nav>
       </div>
