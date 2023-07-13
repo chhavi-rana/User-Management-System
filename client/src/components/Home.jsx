@@ -7,16 +7,14 @@ import { deleteUser } from "../redux/userReducer";
 
 const Home = () => {
   const dispatch = useDispatch();
-  useEffect(() =>{
-    dispatch(getUser())
-  }, [])
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
   const users = useSelector((state) => state.users.users);
-  
   const handleDelete = (id) => {
     dispatch(deleteUser(id));
   };
-  return  (
-
+  return (
     <div className="container">
       <div>
         <nav className="navbar bg-body-tertiary">
